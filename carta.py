@@ -37,7 +37,9 @@ class Carta:
             return valor - manilhas.index(c)
         if c not in manilhas:
             return self.valor 
-            
+    def getName(self): 
+        return valor[self.valor] + " de " + naipe[self.naipe]
+         
 class Baralho:
     cartas = []
 
