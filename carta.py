@@ -1,12 +1,43 @@
 import random
 
+valor = {
+    9: "3",
+    8: "2",
+    7: "A",
+    6: "K",
+    5: "J",
+    4: "Q",
+    3: "7",
+    2: "6",
+    1: "5",
+    0: "4" 
+}
+
+naipe = {
+    0: "copas",
+    1: "ouros",
+    2: "paus",
+    3: "espadas"
+}
+
+#lista de manilhas
+manilhas = [[0,2], [7,3], [3,0], [3,3]]
+
+
 class Carta:
     valor = 0
     naipe = 0
     def __init__(self, valor, naipe):
         self.valor = valor
         self.naipe = naipe
-
+    def get_value(self):
+        c = [self.valor, self.naipe]
+        if c in manilhas:
+            valor = 13
+            return valor - manilhas.index(c)
+        if c not in manilhas:
+            return self.valor 
+            
 class Baralho:
     cartas = []
 
@@ -22,4 +53,6 @@ class Baralho:
     
     def pop(self):
         return self.cartas.pop(0)
-
+    
+c = Carta(0, 3)
+print(c.get_value())
