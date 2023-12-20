@@ -53,6 +53,3 @@ class Baralho:
     
     def pop(self):
         return self.cartas.pop(0)
-    
-c = Carta(0, 3)
-print(c.get_value())
